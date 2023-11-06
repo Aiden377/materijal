@@ -11,6 +11,30 @@
         let boja = picker.value
         document.getElementById("banner").style.color = boja
       }
+
+      function dodajProjekte(){
+        let broj = document.getElementById("broj-projekata").value
+        document.getElementById('broj-projekata')
+        let target = document.getElementById("projects")
+        console.log(broj)
+        for(i = 0; i < broj; i++){
+          let newElement = `
+          <div class="col card rounded-3">
+                <div class="card-body">
+                    <div class="card-title justify-content-start">
+                        <h4>Projekat 3</h3>
+                    </div>
+                </div>
+            </div>
+          `
+          target.innerHTML += newElement;
+          console.log(target.innerHTML)
+        }
+      }
+
+      function izbrojProjekte(){
+
+      }
     </script>
   </head>
 <body>
@@ -58,7 +82,7 @@
             </div>
         </div>
         <br>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 p-3">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 p-3" id="projects">
             <div class="col card rounded-3" id="target">
                 <div class="card-body">
                     <div class="card-title justify-content-start">
@@ -72,6 +96,8 @@
                 <div class="card-body">
                     <div class="card-title justify-content-start">
                         <h4>Projekat 2</h3>
+                        <button class="btn btn-success" onclick="dodajProjekte()">Dodaj Projekte</button>
+                        <input type="number" name="" id="broj-projekata">
                     </div>
                 </div>
             </div>

@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function reset(){
+            let list = document.getElementById('lista').getElementsByTagName("li")
+            for (i  = 0; i < list.length; i++)
+                list[i].style.display = "block"
+        }
+        function filter(target){
+            let term = target.value 
+            let list = document.getElementById('lista').getElementsByTagName("li")
+            console.log(term)
+            for (i = 0; i < list.length; i++)
+            {
+                console.log(list[i])
+                if (!list[i].innerHTML.includes(term)){
+                    list[i].style.display = 'none'
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <input type="search" name="" id="" onsearch="filter(this, 'lista')" onfocusout="reset()">
+    <ul id="lista">
+        <li>Luka Kojovic</li>
+        <li>Lazar Stefanovic</li>
+        <li>Damjan Milenkovic</li>
+        <li>Aleksa Marjanovic</li>
+        <li>Luka Kulic</li>
+        <li>Mihajlo Pusonja</li>
+        <li>Jovan Milinkovic</li>
+        <li>Aleksa Stefanovic</li>
+    </ul>
+</body>
+</html>

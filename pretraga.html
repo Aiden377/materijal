@@ -4,10 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function reset(){
+        function reset(target){
             let list = document.getElementById('lista').getElementsByTagName("li")
-            for (i  = 0; i < list.length; i++)
+            for (i = 0; i < list.length; i++)
                 list[i].style.display = "block"
+            target.value = ""
         }
         function filter(target){
             let term = target.value 
@@ -15,7 +16,7 @@
             console.log(term)
             for (i = 0; i < list.length; i++)
             {
-                console.log(list[i])
+                // console.log(list[i])
                 if (!list[i].innerHTML.includes(term)){
                     list[i].style.display = 'none'
                 }
@@ -25,7 +26,7 @@
     </script>
 </head>
 <body>
-    <input type="search" name="" id="" onsearch="filter(this, 'lista')" onfocusout="reset()">
+    <input type="search" name="" id="" onsearch="filter(this)" onfocusout="reset(this)">
     <ul id="lista">
         <li>Luka Kojovic</li>
         <li>Lazar Stefanovic</li>
@@ -35,6 +36,13 @@
         <li>Mihajlo Pusonja</li>
         <li>Jovan Milinkovic</li>
         <li>Aleksa Stefanovic</li>
+        <li>Pavle Ilic</li>
+        <li>Ognjen Radenkovic</li>
+        <li>Luka Jaksic</li>
+        <li>Nikola Jovanovic</li>
+        <li>Filip Slovic</li>
+        <li>Sara Radotic</li>
+        <li>Dimitrije Tasic</li>
     </ul>
 </body>
 </html>

@@ -7,7 +7,7 @@
         function reset(target){
             let list = document.getElementById('lista').getElementsByTagName("li")
             for (i = 0; i < list.length; i++)
-                list[i].style.display = "block"
+                list[i].style.color = "black"
             target.value = ""
         }
         function filter(target){
@@ -17,11 +17,17 @@
             for (i = 0; i < list.length; i++)
             {
                 // console.log(list[i])
-                if (!list[i].innerHTML.includes(term)){
-                    list[i].style.display = 'none'
+                if (list[i].innerHTML.includes(term)){
+                    list[i].style.color = 'red'
                 }
             }
 
+        }
+        function dodaj(val)
+        {
+            let val = document.getElementById("new-item").value
+            console.log(val)
+            document.getElementById("lista").innerHTML += `<li>${val}</li>`
         }
     </script>
 </head>
@@ -44,5 +50,7 @@
         <li>Sara Radotic</li>
         <li>Dimitrije Tasic</li>
     </ul>
+    <input type="text" id="new-item" placeholder="Dodaj novog clana liste">
+    <button onClick="dodaj()">Dodaj</button>
 </body>
 </html>
